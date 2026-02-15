@@ -1,2 +1,6 @@
 1. Langachain come with build in loader tools to quickly load files to its document object.
 2. many loaders require other libraries like PDF loading requires pypdf lib and HTML loading requires BS4 lib.
+3. Choose initial embedding model very carefully. Different embedding model cannot interact with each other. Let say you choose embedding model A to embed a document and later swtiched to embedding model B to embedd new documents, those embedding will be on different set of dimension with different set of trained models and cosine similarity will no longer work between those 2 models. That means if u have historical vector store and your organization decides to switch to some new/better embedding model u need to reembedd all your historical vectorized documents. this also means u have to store intital text documents because u are not able to go from vector to new vector. u have to go from original string to new vector. 
+4. embedding method in general accept strings. so if we want to emedd a csv file. how to do it.
+	1. for csv file, u will first load and when u print, it will be list of Documents. 
+	2. so u have to ge the page content out of all the list of document ecause page content is string.

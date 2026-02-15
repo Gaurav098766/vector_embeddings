@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate, HumanMessagePromptTemplate
 from langchain_community.document_loaders import WikipediaLoader
-from .model import get_model
+from .model import get_groq_model
 
 load_dotenv()
 
@@ -17,5 +17,5 @@ def answer_question_about(person_name, question, model):
 
 
 if __name__ == "__main__":
-    model = get_model()
+    model = get_groq_model()
     answer_question_about("Cristiano Ronaldo","When was he born?",model)
