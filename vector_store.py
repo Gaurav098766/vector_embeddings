@@ -29,3 +29,9 @@ new_doc = "What are the four essential human freedoms Roosevelt described for th
 
 similar_docs = db_new_connection.similarity_search(new_doc, k=1)
 # print(similar_docs[0].page_content)
+
+
+# retriever ojects
+retriever = db_new_connection.as_retriever()
+similar_docs = retriever._get_relevant_documents(new_doc)
+print(similar_docs[0].page_content)
