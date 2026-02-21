@@ -3,3 +3,5 @@ __pycache__
 .env
 venv
 speech_new_db
+static_data
+some_new_mkultra
